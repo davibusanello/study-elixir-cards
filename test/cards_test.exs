@@ -44,4 +44,16 @@ defmodule CardsTest do
       refute Cards.contains?(deck, "Hiva")
     end
   end
+
+  describe "Cards.deal" do
+    test "the deck should be separated  " do
+      default_deck = ["Ace of Spades", "Two of Spades", "Three of Spades", "Four of Spades",
+      "Five of Spades", "Ace of Clubs", "Two of Clubs", "Three of Clubs",
+      "Four of Clubs", "Five of Clubs", "Ace of Hearts", "Two of Hearts",
+      "Three of Hearts", "Four of Hearts", "Five of Hearts", "Ace of Diamonds",
+      "Two of Diamonds", "Three of Diamonds", "Four of Diamonds", "Five of Diamonds"]
+      deck = Cards.create_deck
+      refute Cards.deal(deck, 5) == default_deck
+    end
+  end
 end
